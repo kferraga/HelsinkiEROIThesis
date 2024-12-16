@@ -5,12 +5,12 @@
 # CITATION: Court, V., & Fizaine, F., 2017. Long-term estimates of the energy-return-on-investment (EROI) of coal, oil, and gas global productions. Ecological Economics, 138, pp. 145–159.
 
 ## Court and Fizaine General Information
-valid_resources = ["coal", "oil", "gas"]
+valid_resources = ["Coal", "Oil", "Gas"]
 valid_prediction_types = ["l", "b", "h"]
 base_year = 1800
 
 ## Court and Fizaine EROI Coal Constants
-coal = {
+Coal = {
     "delta": {"b": 0.022, "l": 0.024, "h": 0.021},
     "tlag": {"b": 333, "l": 323, "h": 343},
     "sf": 166.2530,
@@ -22,7 +22,7 @@ coal = {
 }
 
 ## Court and Fizaine EROI Oil Constants
-oil = {
+Oil = {
     "delta": {"b": 0.03, "l": 0.04, "h": 0.024},
     "tlag": {"b": 250, "l": 240, "h": 260},
     "sf": 43.7869,
@@ -34,7 +34,7 @@ oil = {
 }
 
 ## Court and Fizaine EROI Gas Constants
-gas = {
+Gas = {
     "delta": {"b": 0.037, "l": 0.058, "h": 0.027},
     "tlag": {"b": 238, "l": 228, "h": 248},
     "sf": 145.2906,
