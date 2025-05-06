@@ -1,9 +1,5 @@
-import constants as c
+from Dependencies import constants as c
 import math
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-
 
 def validate_parameters(valid_resources, valid_prediction_types):
     """Decorator that ensures any functions in this section only use a valid resource and prediction type."""
@@ -24,7 +20,12 @@ def validate_parameters(valid_resources, valid_prediction_types):
     return decorator
 
 
+# LEGACY
 class CtFeEROI:
+    """
+    NOTE: This was written to model Court & Fizaine's work, but *was not used* in this thesis due to my
+    adjusted methodology. This has been kept in for potential replication and comparisons in the future.
+    """
     @validate_parameters(c.valid_resources, c.valid_prediction_types)
     def __init__(self, resource, prediction_type="none"):
         self.resource_dict = getattr(c, resource)
@@ -78,10 +79,11 @@ class CtFeEROI:
                     self.resource_dict["sf"])
 
         resource_fossil_EROIs = []
-        if self.prediction_type == "none":
+        resource_er = self.exploitation_ratio(year)
 
+        if self.prediction_type == "none":
+            pass
         if self.prediction_type == "all":
-            resource_er = self.exploitation_ratio(year)
             for prediction_er in resource_er:
                 resource_fossil_EROIs += [_resource_fossil_EROI_eq(prediction_er)]
             return resource_fossil_EROIs
